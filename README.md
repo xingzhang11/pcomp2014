@@ -1,6 +1,5 @@
-/*Mar3 reading temperature data from color*/
-// 1 Blue LED * 3 Red LEDS stand for cold and hot seperately
-// March 3, 2014 by Xing Zhang 
+/*reading temperature data from color*/
+/*Mar3,2014 by Xing Zhang*/
 
 const int sensorPin = A0;
 const float baselineTemp = 160; 
@@ -14,11 +13,11 @@ void setup(){
 }
 
 void loop(){
-  int sensorVal	=analogRead(sensorPin); 
+  int sensorVal=analogRead(sensorPin); 
   Serial.print("Sensor Value:");
   Serial.print(sensorVal); //check the temperature
 
-//if it is colder than the default temp, blue lights up
+  //if it is colder than the default temp, blue lights up
   if(sensorVal<baselineTemp){ 
     digitalWrite(2,HIGH);
     digitalWrite(3,LOW);
@@ -46,6 +45,7 @@ void loop(){
   }
   delay(100);
 }
+
 
 
 
